@@ -28,7 +28,7 @@ class Student
     DB[:conn].execute(sql)
   end
 
-  def save
+  def save #saves the song object to the table
     sql = <<-SQL
     INSERT INTO students (name,grade)
     VALUES
