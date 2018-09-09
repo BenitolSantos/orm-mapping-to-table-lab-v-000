@@ -21,14 +21,16 @@ class Student
     DB[:conn].execute(sql)
   end
 
-  def self.drop_table #deletes the table.
+  def self.drop_table 
+    #deletes the table.
     sql = <<-SQL
     DROP TABLE students;
     SQL
     DB[:conn].execute(sql)
   end
 
-  def save #saves the song object to the table
+  def save 
+    #saves the song object to the table
     sql = <<-SQL
     INSERT INTO students (name,grade)
     VALUES
@@ -39,7 +41,7 @@ class Student
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
   end
 
-  def self.create(name:,grade:) 
+  def self.create(name:,grade:)
     #creates the song in ruby so that you don't have to assign it to a variable.
     student = Student.new(name,grade)
     student.save
