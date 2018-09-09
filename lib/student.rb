@@ -11,6 +11,7 @@ class Student
   end
 
   def self.create_table
+    #creates the table
     sql = <<-SQL
     CREATE TABLE IF NOT EXISTS students (
     id integer PRIMARY KEY,
@@ -21,7 +22,7 @@ class Student
     DB[:conn].execute(sql)
   end
 
-  def self.drop_table 
+  def self.drop_table
     #deletes the table.
     sql = <<-SQL
     DROP TABLE students;
@@ -29,7 +30,7 @@ class Student
     DB[:conn].execute(sql)
   end
 
-  def save 
+  def save
     #saves the song object to the table
     sql = <<-SQL
     INSERT INTO students (name,grade)
