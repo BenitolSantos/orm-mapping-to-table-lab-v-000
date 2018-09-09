@@ -39,7 +39,8 @@ class Student
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
   end
 
-  def self.create(name:,grade:)
+  def self.create(name:,grade:) 
+    #creates the song in ruby so that you don't have to assign it to a variable.
     student = Student.new(name,grade)
     student.save
     student
