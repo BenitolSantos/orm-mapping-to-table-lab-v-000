@@ -5,6 +5,7 @@ class Student
   attr_reader :id
 
   def initialize(name,grade,id=nil)
+    #id is nil because it will be given from the table.
     @name = name
     @grade = grade
     @id = id
